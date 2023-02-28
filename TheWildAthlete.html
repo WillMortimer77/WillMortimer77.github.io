@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/if.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<h1>Some Memorable Movies</h1>
+<h3><span class="ital">The Wild Athlete</span> (Will Mortimer, 2022)</h3>
+	
+<div class="sideBySide">
+<img class="filmStill" onClick="onClick_DTRT_img01()" src="images/The_Wild_Athlete1.jpg" alt="The Wild Athlete 1">
+<img class="filmStill" onClick="onClick_DTRT_img02()" src="images/The_Wild_Athlete2.jpg" alt="The Wild Athlete 2">
+<img class="filmStill" onClick="onClick_DTRT_img03()" src="images/The_Wild_Athlete3.jpg" alt="The Wild Athlete 3">
+</div>
+		
+<p class="filmInfo" id="DTRT_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, modi autem necessitatibus, eaque, repellendus laborum adipisci temporibus ipsam eligendi ut sit veniam. Impedit nostrum saepe corporis illum facilis perferendis quod perspiciatis, hic sapiente iste ut animi assumenda! Ipsam ratione officiis et repellendus molestias commodi deleniti cupiditate ab, ad molestiae dignissimos!</p>
+	
+<button type="button" onClick="gotoMovie()" id="gotoMovie_btn">Go to the movie</button>
+	
+</body>
+<script>
+	
+var gotoMovie_btn = document.getElementById("gotoMovie_btn");
+gotoMovie_btn.style.visibility = "hidden";
+	
+var img01_clicked = false;
+var img02_clicked = false;
+var img03_clicked = false;
+	
+var DTRT_text = document.getElementById("DTRT_text");
+	
+var DTRT00 = "The Wild Athlete is a short film that I produced for the final assignment of my Film 222 class in the fall of 2022. The film is a spinoff mockumentary of the wildly popular television series 'The Crocodile Hunter' starring Steve Irwin. This film mocks it by following a 'hunter' as he scours the land in search of wild student athletes."
+	
+var DTRT01 = "The story starts off with the hunter finding a wild tennis player studying for finals in the student success center for athletes. As we work our way through the list, we come across a men's soccer player lifting weights in the althetic weight room, then onto a house filled with different athletes from different sports, and finally moving to the practice arena for the track and field team."
+
+var DTRT02 = "The process of making this film was very difficult due to the scheduling of all the individual players and performers. Thankfully, since I'm good friends with the lot we were able to make it work within a short amount of time and they enjoyed the process and the outcome of the film. I've used a couple of them in other short films I've created so there are little cameos here at there with them making showings."
+
+var DTRT03 = "We traveled to different locations that the athletes at UWM have special access to and even their own houses, but the student athletes are the same as everyone else in the fact that we study in the same classes and are going to the same parties. It's just the fact that we dedicate our time and efforts in college towards competing as a part of a team for the school to earn money for ourselves and the program."
+
+DTRT_text.innerHTML = DTRT00;
+	
+function onClick_DTRT_img01(){
+img01_clicked = true;
+console.log("img01_clicked = " + img01_clicked);
+	DTRT_text.innerHTML = DTRT01;
+	revealButton();
+}
+	
+function onClick_DTRT_img02(){
+img02_clicked = true;
+console.log("img02_clicked = " + img02_clicked);
+	DTRT_text.innerHTML = DTRT02;
+	revealButton();
+}
+	
+function onClick_DTRT_img03(){
+img03_clicked = true;
+console.log("img03_clicked = " + img03_clicked);
+	DTRT_text.innerHTML = DTRT03;
+	revealButton();
+}
+
+function revealButton(){
+	if (img01_clicked && img02_clicked && img03_clicked){
+	console.log("REVEAL BUTTON");
+		gotoMovie_btn.style.visibility = "visible";
+	}
+}
+	
+function gotoMovie(){
+	window.open("https://youtu.be/hWry9jX2YX4");
+}
+</script>
+</html>
